@@ -1,0 +1,120 @@
+# User-specific files
+*.swp
+*.swo
+*.swn
+*.sml
+*.pidb
+*.pidb.meta
+*.pidb.lock
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# Xcode
+.DS_Store
+build/
+DerivedData/
+*.hmap
+*.ipa
+*.xcuserstate
+*.moved-aside
+*.xcuserdatad
+
+# Xcode iOS
+*.moved-aside
+*.ipa
+*.xcuserstate
+
+# Xcode macOS
+*.dSYM.zip
+*.dSYM
+
+# Xcode watchOS
+*.moved-aside
+*.ipa
+*.xcuserstate
+
+# Xcode tvOS
+*.moved-aside
+*.ipa
+*.xcuserstate
+
+# Xcode miscellaneous
+*.hmap
+*.xccheckout
+*.xcscmblueprint
+*.xcsettings
+*.xcworkspace
+*.xcuserdata
+*.xcuserdatad
+*.xcuserstate
+
+# Xcode iOS / tvOS
+!*.xcodeproj
+!*.xcworkspace
+
+# Swift Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Cocoapods
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Code Injection
+.ci/
+.ci/**/*.ci
+
+# Bundle artifacts
+*.xcarchive
+*.app
+*.dSYM
+*.ipa
+*.xcworkspace
+
+# AppCode
+.idea/
+.idea_modules/
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/**/git.xml
+.idea/**/jarRepositories.xml
+.idea/**/custom_tools.xml
+.idea/**/gradle.xml
+.idea/**/gradle_dependencies.xml
+
+# Other
+*.swp
+*.swo
+*.dSYM
+*.xcuserstate
+*.xccheckout
+*.xcodeproj
+*.xcsettings
+*.xcworkspace
+*.xcuserdata
+*.xcuserdatad
+*.xccheckout
+*.xcscmblueprint
+*.xcuserstate
+*.xcscheme
+*.xcsettings
+
