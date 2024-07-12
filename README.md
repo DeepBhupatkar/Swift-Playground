@@ -1,2 +1,2 @@
 # Swift-Playground
-This repo contains various Swift programs, ranging from basic to advanced levels.
+This repo contains various Swift programs.from basic to advanced levels.
