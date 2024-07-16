@@ -34,8 +34,8 @@ extension Person {
 let person = Person(firstName: "Deep", lastName: "Bhupatkar")
 
 // Print the full name and initials
-print(person.fullName())  // Output: "John Doe"
-print(person.initials())  // Output: "JD"
+print(person.fullName())  // Output: "Deep Bhupatkar"
+print(person.initials())  // Output: "DB"
 
 //Ending of Extension Example
 
