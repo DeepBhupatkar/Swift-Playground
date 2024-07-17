@@ -76,7 +76,7 @@ while (i <= 10) {
 // End
 
 
-// new example of guard steatement 
+// new example of guard steatement
 // create a function
 func checkOddEven() {
   var number = 22
@@ -97,3 +97,45 @@ checkOddEven()
 // End
 
 //---- End : For Gurad Understanding ----///
+
+
+
+// MARK: Start - Swift Colsuer Example
+
+var greet = {
+    
+    print("Hello Good Morning")
+}
+
+// call closure
+
+ greet()
+
+
+//example two
+
+var welcomeUser =  { (name:String ) in
+    
+    print("Hello there,\(name).")
+    
+    
+}
+//closure call
+welcomeUser("D")
+
+
+//example three
+
+// closure definition
+var findSquare = { (num: Int) -> (Int) in
+  var square = num * num
+  return square
+}
+
+// closure call
+var result = findSquare(9)
+
+print("Square:",result)
+
+
+// End
