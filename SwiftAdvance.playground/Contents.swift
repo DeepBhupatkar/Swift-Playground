@@ -18,6 +18,7 @@ class Person {
     func fullName() -> String {
         return "\(firstName) \(lastName)"
     }
+    
 }
 
 // Extend the Person class to add new functionality
@@ -64,5 +65,36 @@ swapTwoValues(&firstString, &secondString)
 print("firstString: \(firstString), secondString: \(secondString)")  // Output: firstString: World, secondString: Hello
 
 
-
 //Ending of Generics Example
+
+
+// Optional like null values Start
+
+var number: Int        // Defaults to 0
+var name: String?      // Defaults to nil
+var isEnabled: Bool    // Defaults to false
+
+print(number)
+
+// Optional end
+
+// Dictionary Start 
+
+// Define a dictionary with initial values
+var personInfo: [String: Any] = ["name": "John Doe", "age": 30, "isEmployed": true]
+
+// Accessing elements in the dictionary
+let name = personInfo["name"] as? String
+let age = personInfo["age"] as? Int
+let isEmployed = personInfo["isEmployed"] as? Bool
+
+// Printing the values
+if let name = name, let age = age, let isEmployed = isEmployed {
+    print("Name: \(name)")
+    print("Age: \(age)")
+    print("Is Employed: \(isEmployed)")
+} else {
+    print("Unable to retrieve person information.")
+}
+
+// Dictionary End
