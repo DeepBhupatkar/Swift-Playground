@@ -312,3 +312,22 @@ appManager.updateUI()          // UI update on the main thread
 print("App tasks are running...")
 
 // MARK: End Of QOS
+
+// MARK: Start of init() Example
+
+// declare a class
+class  Wall {
+  var length: Double
+
+  // initializer to initialize property
+  init() {
+    length = 5.5
+    print("Creating a wall.")
+    print("Length = ", length)
+  }
+}
+
+// create an object
+var wall1 = Wall()
+
+// MARK: End of init() Example
