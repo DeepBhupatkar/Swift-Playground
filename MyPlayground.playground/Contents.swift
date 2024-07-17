@@ -139,3 +139,84 @@ print("Square:",result)
 
 
 // End
+
+// Start of @Escaping Example .
+
+
+import Foundation
+import PlaygroundSupport
+
+// Required to allow asynchronous code to run in playground
+PlaygroundPage.current.needsIndefiniteExecution = true
+
+class NetworkManager {
+    var completionHandler: (() -> Void)?
+
+    func fetchData(completion: @escaping () -> Void) {
+        print("Fetching data...")
+
+        // Store the completion handler to be called later
+        completionHandler = completion
+
+        // Simulate a network request with a delay
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            print("Data fetched!")
+            self.completionHandler?() // Call the stored completion handler
+        }
+    }
+}
+
+let networkManager = NetworkManager()
+
+networkManager.fetchData {
+    print("Completion handler called: Data processing completed!")
+}
+
+print("Fetching data in progress...")
+
+// To keep the playground running long enough for the asynchronous code to execute
+//PlaygroundPage.current.finishExecution()
+
+/// End of @Escaping Example
+
+// MARK: EXAMPLE START OF DISPATCH QUEUE .
+
+import Foundation
+
+// 1. Main Queue: Update UI on the main thread
+DispatchQueue.main.async {
+    print("This is executed on the main thread")
+    // Update UI here
+}
+
+// 2. Global Queue: Perform background tasks
+DispatchQueue.global().async {
+    print("This is executed on a background thread")
+    // Perform time-consuming task here
+}
+
+// 3. Custom Serial Queue: Execute tasks one after another
+let serialQueue = DispatchQueue(label: "com.example.serialQueue")
+serialQueue.async {
+    print("Task 1 on serial queue")
+    // Task 1
+}
+serialQueue.async {
+    print("Task 2 on serial queue")
+    // Task 2
+}
+
+// 4. Custom Concurrent Queue: Execute tasks concurrently
+let concurrentQueue = DispatchQueue(label: "com.example.concurrentQueue", attributes: .concurrent)
+concurrentQueue.async {
+    print("Task 1 on concurrent queue")
+    // Task 1
+}
+concurrentQueue.async {
+    print("Task 2 on concurrent queue")
+    // Task 2
+}
+
+print("End of the playground code")
+
+// MARK: EXAMPLE END OF DISPATCH QUEUE.
