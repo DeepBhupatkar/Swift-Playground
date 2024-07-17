@@ -220,3 +220,95 @@ concurrentQueue.async {
 print("End of the playground code")
 
 // MARK: EXAMPLE END OF DISPATCH QUEUE.
+
+
+
+// MARK: Start of Sync() Example
+func syncWork(){
+        let northZone = DispatchQueue(label: "perform_task_with_team_north")
+        let southZone = DispatchQueue(label: "perform_task_with_team_south")
+        
+        northZone.sync {
+            for numer in 1...3{ print("North \(numer)")}
+        }
+        southZone.sync {
+            for numer in 1...3{ print("South \(numer)") }
+        }
+    }
+    
+    //Call Func here
+    syncWork()
+
+
+// MARK: End of Sync () Example
+
+
+// MARK: Start of Async () Example
+func asyncWork(){
+        let northZone = DispatchQueue(label: "perform_task_with_team_north")
+        let southZone = DispatchQueue(label: "perform_task_with_team_south")
+        
+        northZone.async {
+            for numer in 1...3{ print("North \(numer)") }
+        }
+        southZone.async {
+            for numer in 1...3{ print("South \(numer)") }
+        }
+    }
+
+//Call Async Task
+asyncWork()
+// MARK: End of Async () Example
+
+
+// MARK: Start Of QOS
+
+import Foundation
+import PlaygroundSupport
+
+// Required to allow asynchronous code to run in playground
+PlaygroundPage.current.needsIndefiniteExecution = true
+
+class AppManager {
+    // Function to load user data
+    func loadUserData() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            print("Loading user data...")
+            // Simulate a time-consuming task
+            Thread.sleep(forTimeInterval: 2)
+            print("User data loaded")
+
+            // Update the UI on the main thread
+            DispatchQueue.main.async {
+                print("Updating UI with user data")
+            }
+        }
+    }
+
+    // Function to perform background sync
+    func performBackgroundSync() {
+        DispatchQueue.global(qos: .background).async {
+            print("Performing background sync...")
+            // Simulate a long-running task
+            Thread.sleep(forTimeInterval: 5)
+            print("Background sync completed")
+        }
+    }
+
+    // Function to update UI
+    func updateUI() {
+        DispatchQueue.main.async {
+            print("Updating UI...")
+        }
+    }
+}
+
+let appManager = AppManager()
+
+appManager.loadUserData()      // High-priority task to load user data
+appManager.performBackgroundSync() // Low-priority task to sync in the background
+appManager.updateUI()          // UI update on the main thread
+
+print("App tasks are running...")
+
+// MARK: End Of QOS
