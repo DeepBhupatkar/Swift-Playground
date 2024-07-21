@@ -403,3 +403,36 @@ calc1.product()
 
 
 // MARK: End Of Protocol () Example
+
+
+// MARK: Swift Ranges Example Start
+
+ /// Main three type 1) Closed Range 2) Half Open Range 3) One-Sided Range
+ 
+// Type 1
+for numbers in 1...4 {
+  print(numbers)
+}
+
+// Type 2
+for numbers in 1..<4 {
+  print(numbers)
+}
+
+// Type 3
+// one-sided range using
+// ..< operator
+let range1 = ..<2
+
+// check if -9 is in the range
+print(range1.contains(-9))
+
+// one-sided range using
+// ... operator
+let range2 = 2...
+
+// check if 33 is in the range
+print(range2.contains(33))
+
+// MARK: Swift Ranges Example End
+
