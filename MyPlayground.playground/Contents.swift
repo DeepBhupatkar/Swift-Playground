@@ -436,3 +436,30 @@ print(range2.contains(33))
 
 // MARK: Swift Ranges Example End
 
+// MARK: Swift Function with parameter types Start
+
+
+func addNumbers(a: Int, b: Int) {
+  var sum = a + b
+  print("Sum:", sum)
+}
+
+addNumbers(a: 2, b: 3)
+
+
+func addNumbersTwo( a: Int = 7,  b: Int = 8) {
+  var sum = a + b
+  print("Sum:", sum)
+}
+
+// function call with two arguments
+addNumbersTwo(a: 2, b: 3)
+
+// function call with one argument
+addNumbersTwo(a: 2)
+
+// function call with no arguments
+addNumbersTwo()
+
+// MARK: Swift function with parameter types End
+
