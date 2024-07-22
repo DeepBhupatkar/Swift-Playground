@@ -461,5 +461,5 @@ addNumbersTwo(a: 2)
 // function call with no arguments
 addNumbersTwo()
 
-// MARK: Swift function with parameter types End
+// MARK: Swift function with parameter types End.
 
