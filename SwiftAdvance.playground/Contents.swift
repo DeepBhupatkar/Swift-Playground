@@ -98,3 +98,20 @@ if let name = name, let age = age, let isEmployed = isEmployed {
 }
 
 // Dictionary End
+
+// Function object inside another function
+
+
+func performAction(withFunction function: () -> Void) {
+    // Perform some actions
+    print("Before calling the function")
+    function()
+    print("After calling the function")
+}
+
+func myFunction() {
+    print("This is my function")
+}
+
+performAction(withFunction: myFunction)
+
